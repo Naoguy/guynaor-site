@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- ═══════════════════════════════════════════════════════════
+     PROJECT PAGE TEMPLATE
+     1. Copy this file and rename it project-yourname.html
+     2. Replace every [PLACEHOLDER] below
+     3. Add a matching .project-item card to index.html
+     See project-yoto.html for a completed example.
+═══════════════════════════════════════════════════════════ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PROJECT NAME] — Guy Naor</title>
+  <meta name="description" content="[One-line project description]">
+  <meta property="og:title" content="[PROJECT NAME] — Guy Naor">
+  <meta property="og:description" content="[One-line project description]">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guynaor.site/project-[NAME].html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f8f7f5'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='36' text-anchor='middle' fill='%231a1a18'%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER (identical on every page — don't edit) -->
+  <header class="site-header" id="site-header">
+    <a class="header-name" href="index.html">
+      <div class="name">GUY NAOR <span class="return-arrow">↩</span></div>
+      <span class="tagline">Industrial Designer / Creative / Entrepreneur</span>
+    </a>
+    <span class="header-clock" id="live-clock">00:00:00</span>
+    <a class="header-info" href="info.html">Info</a>
+  </header>
+
+  <div class="page">
+    <div class="project-detail">
+      <a class="back-link" href="index.html">← Back to work</a>
+
+      <div class="project-header">
+        <h1>[PROJECT NAME]</h1>
+        <p class="subtitle">[Category / Subtitle]</p>
+      </div>
+
+      <!-- HERO IMAGE (max-width 760px, 4:3) -->
+      <div class="project-hero">
+        <img src="images/[name].jpg" alt="[PROJECT NAME]">
+      </div>
+
+      <div class="project-meta">
+        <!-- Optional — remove if the project wasn't at a studio -->
+        <p class="studio">Project at <strong>[Studio Name]</strong></p>
+        <p class="lead">[One-line italic lead describing the project.]</p>
+        <!-- Optional — remove if there's no external case study -->
+        <a href="[CASE STUDY URL]" target="_blank" rel="noopener" class="case-link">Full case study: ↗</a>
+      </div>
+
+      <!-- TWO-COLUMN BODY: text left, images right -->
+      <div class="project-body">
+        <div class="text-col">
+          <p>[First paragraph — the brief and context.]</p>
+          <p>[Second paragraph — your specific contribution.]</p>
+          <p>[Third paragraph — challenges solved, outcome.]</p>
+        </div>
+        <div class="img-col">
+          <div class="img-wrap"><img src="images/[name]-detail-1.jpg" alt="[Detail description]" loading="lazy"></div>
+          <div class="img-wrap"><img src="images/[name]-detail-2.jpg" alt="[Detail description]" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- OPTIONAL FULL-WIDTH IMAGE with monospace caption — duplicate as needed -->
+      <!--
+      <div class="project-full-img">
+        <div class="img-wrap"><img src="images/[name]-wide.jpg" alt="[Description]" loading="lazy"></div>
+        <p class="img-caption">[Caption text]</p>
+      </div>
+      -->
+    </div>
+    <footer class="site-footer"><span>↘</span><span>2025</span><span>↗</span></footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
