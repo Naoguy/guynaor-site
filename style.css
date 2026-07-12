@@ -4,6 +4,7 @@
   --muted: #888880;
   --accent: #c8622a;
   --border: #e0dfd9;
+  --thumb-bg: #e2e1dc;
   --mono: 'Space Mono', monospace;
   --sans: 'DM Sans', sans-serif;
   --header-h: 72px;
@@ -131,10 +132,80 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .notfound a { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.04em; }
 .notfound a:hover { opacity: 0.6; }
 
+/* ── RAW FIELD (homepage exploration) ── */
+.field-intro { max-width: 760px; margin: 0 auto; padding: 44px 28px 8px; }
+.field-intro .lede { font-family: var(--sans); font-weight: 300; font-size: clamp(1.15rem, 2.7vw, 1.7rem); line-height: 1.42; letter-spacing: -0.01em; }
+.field-intro .lede em { font-style: italic; color: var(--muted); }
+.field-intro .sub { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-top: 18px; line-height: 1.75; }
+
+.field-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; max-width: 1300px; margin: 0 auto; padding: 20px 28px 26px; font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.05em; }
+.field-bar button { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); background: none; border: 1px solid var(--border); padding: 8px 14px; cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+.field-bar button:hover { background: var(--text); color: var(--bg); }
+
+/* masonry via CSS columns — all columns equal width; weight comes from
+   card height (--ar) + title size, not width. Position is the random part. */
+.field { max-width: 1300px; margin: 0 auto; padding: 0 20px 72px; column-count: 3; column-gap: 22px; }
+@media (max-width: 1000px) { .field { column-count: 2; } }
+@media (max-width: 620px)  { .field { column-count: 1; max-width: 460px; } }
+
+.card {
+  break-inside: avoid; margin: 0 8px 24px; display: block;
+  transform: rotate(var(--rot, 0deg)) translateX(var(--jx, 0px));
+  transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.3s;
+  will-change: transform;
+}
+.card:hover { transform: rotate(0deg) translateX(0) scale(1.02); position: relative; z-index: 5; }
+
+.card-project .frame {
+  display: block; overflow: hidden; background: var(--thumb-bg);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 14px 34px -20px rgba(0,0,0,0.4);
+}
+.card-project .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-project .ph {
+  aspect-ratio: var(--ar, 4/3); display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.6rem; color: var(--muted); text-align: center; padding: 20px; line-height: 1.8;
+}
+.card-project .meta { display: flex; flex-wrap: wrap; gap: 5px 10px; align-items: baseline; padding: 12px 2px 0; }
+.card-project .meta .t { font-family: var(--sans); font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; font-size: var(--title, 0.95rem); line-height: 1.15; }
+.card-project .meta .m { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.03em; }
+
+.tag { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.09em; text-transform: uppercase; border: 1px solid var(--border); padding: 2px 7px; color: var(--muted); align-self: center; }
+.tag-solo { color: var(--accent); border-color: var(--accent); }
+
+.card-note { border: 1px solid var(--border); padding: 20px 22px; background: var(--bg); }
+.card-note .k { font-family: var(--mono); font-size: 0.56rem; color: var(--muted); letter-spacing: 0.11em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+.card-note p { font-family: var(--sans); font-weight: 300; font-size: 1.02rem; line-height: 1.5; }
+.card-note p.mono-list { font-family: var(--mono); font-size: 0.72rem; line-height: 1.9; color: var(--text); }
+.card-note--accent { background: var(--accent); border-color: var(--accent); }
+.card-note--accent .k { color: rgba(255,255,255,0.75); }
+.card-note--accent p { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transform: none !important; transition: none; }
+  .card:hover { transform: scale(1.01) !important; }
+}
+
+/* ── DARK MODE ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161514;
+    --text: #e8e6e1;
+    --muted: #8a887f;
+    --border: #2c2b27;
+    --thumb-bg: #232220;
+  }
+  .card-project .frame { box-shadow: 0 1px 0 rgba(0,0,0,0.3), 0 16px 40px -20px rgba(0,0,0,0.7); }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .project-grid { grid-template-columns: 1fr; }
   .info-bio { grid-template-columns: 1fr; }
   .project-body { grid-template-columns: 1fr; }
   .header-clock { display: none; }
+}
+/* on a phone, chaos can't survive one column — drop rotation/jitter, stay honest */
+@media (max-width: 620px) {
+  .card { transform: none !important; margin: 0 0 22px; }
+  .field-bar { font-size: 0.55rem; }
 }
