@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guy Naor — Industrial Designer / Creative / Entrepreneur</title>
-  <meta name="description" content="Portfolio of Guy Naor — Industrial Designer, Creative and Entrepreneur based in London.">
+  <meta name="description" content="Guy Naor — Industrial Designer, Creative and Entrepreneur based in London. A field of work, fragments and things I'm into.">
   <meta property="og:title" content="Guy Naor — Industrial Designer / Creative / Entrepreneur">
-  <meta property="og:description" content="Portfolio of Guy Naor — Industrial Designer, Creative and Entrepreneur based in London.">
+  <meta property="og:description" content="Guy Naor — Industrial Designer, Creative and Entrepreneur based in London. A field of work, fragments and things I'm into.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://guynaor.site/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f8f7f5'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='36' text-anchor='middle' fill='%231a1a18'%3EG%3C/text%3E%3C/svg%3E">
@@ -29,59 +29,21 @@
 
   <div class="page">
 
-    <div class="section-intro">
-      <h2>Work</h2>
-      <p>Some notable projects I had the pleasure of working on in the last few years (that I can share).</p>
-      <p class="coming-soon">2025–2026 work coming soon. 🦎</p>
+    <div class="intro">
+      <p class="lede">I design, prototype and figure out physical things — products, tools, one-offs and the occasional rabbit hole. <em>Some of it mine, most of it made with studios and teams, over more years than I'll admit.</em></p>
+      <p class="sub">A field of work and fragments below, in no particular order. Hover to see what belongs together; click anything to pull up the project behind it. 🦎</p>
     </div>
 
-    <div class="project-grid">
-
-      <a class="project-item" href="project-yoto.html">
-        <div class="thumb">
-          <!-- When you have real images, replace the placeholder div with:
-               <img src="images/yoto.jpg" alt="Yoto & Yoto Mini" loading="lazy"> -->
-          <div class="placeholder">[ YOTO &amp; YOTO MINI ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">YOTO &amp; YOTO MINI / Industrial Design</p>
-      </a>
-
-      <a class="project-item" href="project-pigzbe.html">
-        <div class="thumb">
-          <div class="placeholder">[ PIGZBE ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">PIGZBE / Design for Manufacture</p>
-      </a>
-
-      <a class="project-item" href="project-economad.html">
-        <div class="thumb">
-          <div class="placeholder">[ ECONOMAD ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">ECONOMAD / R&amp;D</p>
-      </a>
-
-      <a class="project-item" href="project-untitled.html">
-        <div class="thumb">
-          <div class="placeholder">[ UNTITLED ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">UNTITLED / Exploration</p>
-      </a>
-
-      <a class="project-item" href="project-uniqlo.html">
-        <div class="thumb">
-          <div class="placeholder">[ UNIQLO ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">UNIQLO / Exhibition Design</p>
-      </a>
-
-      <a class="project-item" href="project-chip.html">
-        <div class="thumb">
-          <div class="placeholder">[ CHIP PROJECT ]<br>Replace with your image</div>
-        </div>
-        <p class="caption">CHIP DESIGN / R&amp;D</p>
-      </a>
-
+    <div class="field-bar">
+      <span>↓ &nbsp;work · fragments · interests</span>
+      <button id="shuffle" type="button">⟳ Shuffle</button>
     </div>
+
+    <!-- Scatter field — populated from data.js by script.js -->
+    <div class="field" id="field"></div>
+
+    <!-- Hover context label (desktop) -->
+    <div id="hoverlabel" aria-hidden="true"></div>
 
     <section class="contact-section">
       <h2>Contact</h2>
@@ -103,6 +65,10 @@
     <footer class="site-footer"><span>↘</span><span>2025</span><span>↗</span></footer>
   </div>
 
+  <!-- PROJECT VIEWER (overlay; opened via #slug in the URL) -->
+  <div id="viewer" aria-hidden="true"></div>
+
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
