@@ -100,7 +100,7 @@ window.addEventListener('scroll', () => {
     }
     const chips = (p.workTypes || []).map(t => '<span class="type">' + esc(t) + '</span>').join('');
     const caseLink = p.caseUrl
-      ? '<div class="viewer-case"><a href="' + esc(p.caseUrl) + '" target="_blank" rel="noopener">Case study ↗</a></div>'
+      ? '<div class="viewer-case"><a href="' + esc(p.caseUrl) + '" target="_blank" rel="noopener">' + esc(p.caseLabel || 'Case study ↗') + '</a></div>'
       : '';
 
     let body;
