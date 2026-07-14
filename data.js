@@ -2,9 +2,13 @@ window.PROJECTS = [
  {
   "slug": "yoto",
   "name": "Yoto & Yoto Mini",
-  "category": "Industrial Design",
-  "role": "Contributed",
-  "studio": "Pentagram",
+  "affiliation": "Pentagram",
+  "workTypes": [
+   "Industrial Design",
+   "Prototyping",
+   "Animation"
+  ],
+  "caseUrl": "https://www.pentagram.com/work/yoto",
   "writeup": "Yoto is an interactive, screen-free audio platform for children which delivers stories, music, radio and podcasts for families safely with the Yoto Player, a connected screen-free speaker. A key feature of the Yoto experience is the use of physical cards for playback and control of audio content.\n\nPentagram developed the industrial design of the Yoto Player, the brand identity, packaging and visual identity.\n\nI supported development of this product in various stages, including product animation, prototyping, technical development and the design of the Yoto action jacket, which was introduced after the product's launch, and greatly expanded its appeal and functionality.",
   "images": [
    {
@@ -30,9 +34,13 @@ window.PROJECTS = [
  {
   "slug": "quandela",
   "name": "Quandela",
-  "category": "ID / Design Language / Fabrication",
-  "role": "Lead",
-  "studio": "Pentagram",
+  "affiliation": "Pentagram",
+  "workTypes": [
+   "Industrial Design",
+   "Design Language",
+   "Fabrication"
+  ],
+  "caseUrl": "",
   "writeup": "Quandela, headquartered in Paris, France, has developed a unique semiconductor-based source of quantum light. Quantum light sources (or single-photon sources) are at the core of photonic-based quantum computing systems and quantum communication networks.\n\nPentagram developed the industrial design of two products for Quandela: a single photon source control unit and the first fully integrated photonic qubit emitter. Further down the line, the team supported Quandela in the development of their first installed quantum computer, unveiled in winter 2023.\n\nWith a central role in this project, I was directly responsible for the design and execution of concepts and full technical development of the numerous products and systems produced by Quandela throughout our several years working with them, as well as liaising with and instructing the various fabrication partners for the delivery of the first commercial computer.",
   "images": [
    {
@@ -82,16 +90,20 @@ window.PROJECTS = [
  {
   "slug": "lightmatter",
   "name": "Lightmatter",
-  "category": "ID / Design Language",
-  "role": "Lead designer",
-  "studio": "",
+  "affiliation": "",
+  "workTypes": [
+   "Industrial Design",
+   "Design Language"
+  ],
+  "caseUrl": "",
   "writeup": "Lightmatter's technology is revolutionising the cutting edge of computing, using chips that perform calculations by manipulating light rather than electricity, opening the potential for exponential increases in speed, energy efficiency and temperature.\n\nThe design language was built around the unique properties of photonic systems, focusing on the lightwave guides inside the chips as the core visual elements, in line with a unique brand design.\n\nSleek and minimalistic, the hardware design is built to convey the look and feel of a high-end sound system, rather than the familiar computing 'black box' archetype.\n\nI worked as one of the lead designers on this project, responsible for every step from concept creation all the way to final deliverables for the client for production.",
   "images": [
    {
     "full": "images/full/lightmatter/lightmatter-01.png",
     "thumb": "images/thumb/lightmatter/lightmatter-01.png",
     "w": 1600,
-    "h": 303
+    "h": 303,
+    "caption": "Photonic waveguide motif driving the design language"
    },
    {
     "full": "images/full/lightmatter/lightmatter-02.jpg",
@@ -128,9 +140,12 @@ window.PROJECTS = [
  {
   "slug": "pigzbe",
   "name": "Pigzbe",
-  "category": "Design for Manufacture",
-  "role": "Core design",
-  "studio": "",
+  "affiliation": "",
+  "workTypes": [
+   "Design for Manufacture",
+   "UX / UI"
+  ],
+  "caseUrl": "",
   "writeup": "Working closely with Pigzbe's founder, the industrial design team's goal was to create a compact product reminiscent of a credit card, that would feel loveable for children and robust enough to be handled by them.\n\nAlong with a full development stream to bring the product to mass production, the team also worked out a complete user flow and UI principles utilising the device's two buttons and LED matrix — ensuring the device is easily operated by children.\n\nAlong with the other designer on the project, I was responsible for the entire plastic design for prototyping and specification for injection moulding, and collaborating on a robust UX/UI flow development.",
   "images": [
    {
@@ -174,9 +189,13 @@ window.PROJECTS = [
  {
   "slug": "atlas",
   "name": "Atlas",
-  "category": "Industrial Design / Prototyping",
-  "role": "Contributed",
-  "studio": "",
+  "affiliation": "Freelance",
+  "workTypes": [
+   "Industrial Design",
+   "R&D",
+   "Prototyping"
+  ],
+  "caseUrl": "",
   "writeup": "Atlas are developing a unique non-invasive brain health wearable technology, and have recently come out of stealth in preparation for the first generation of the device being handed to beta testers.\n\nBefore their launch, I worked with a fellow designer to support Atlas on the design and development of their alpha version, including design language, R&D for a mechanical coupling between the device and sensor array, and development of several components and a portable charging case and applicator.\n\nWe've worked with Atlas from initial concepts all the way to supporting the production and delivery of 100 units for their closed alpha and lab test phases.\n\nMore process can be shared privately upon request, as details of the device are still protected under NDA.",
   "images": [
    {
@@ -196,9 +215,11 @@ window.PROJECTS = [
  {
   "slug": "uniqlo",
   "name": "Uniqlo",
-  "category": "Exhibition Design",
-  "role": "Team",
-  "studio": "Pentagram",
+  "affiliation": "Pentagram",
+  "workTypes": [
+   "Exhibition Design"
+  ],
+  "caseUrl": "",
   "writeup": "A major exhibition that dramatises and codifies Japanese clothing brand UNIQLO's LifeWear concept.\n\nLifeWear is simple, high-quality, everyday clothing designed to be both practical and beautiful. Pentagram developed the entire experience for UNIQLO, including the exhibition identity, graphics and advertising, video content, exhibition design, installations, interactive experiments and sound design. The exhibition spans approximately 750 square metres and is divided into themed zones showcasing LifeWear's core values of innovation, quality, value and sustainability.\n\nA major collaborative work, our team was responsible for designing an entire exhibition space, complete with complex rigging elements, mechanical scientific experiments showcasing Uniqlo technologies, and unique experiential sections like the Sock Lamp room.",
   "images": [
    {
@@ -212,9 +233,13 @@ window.PROJECTS = [
  {
   "slug": "economad",
   "name": "Economad",
-  "category": "R&D",
-  "role": "Lead",
-  "studio": "",
+  "affiliation": "",
+  "workTypes": [
+   "R&D",
+   "Fabrication",
+   "On-site"
+  ],
+  "caseUrl": "",
   "writeup": "Economad are developing products to enable sustainable small-to-medium scale farming. Their first product is an anaerobic digestion system called Bionomad. The project, started in 2018, focused on building on the existing technological basis while adapting it to be fit both for the scale intended and the climate in which it is meant to operate.\n\nWhen properly operational, the system has the potential to give farmers both financial gains and a reduction in waste and a boost to crop yields, using the high-quality biogas and the liquid fertiliser — both direct outputs of the system.\n\nA largely R&D project in nature, I had the opportunity to take on many roles, from the design and planning perspective, to the technical solution space, project management, purchasing, and extensive hands-on site work with the client's team, installing pilot and first commercial systems to gain first-hand understanding of the challenges and complexities.\n\nDuring summer 2023, the team took all the learnings from the past 5 years and developed a 'ready-to-market' version, hopefully to be released later this year — however this is still confidential. Images below are derived from the R&D process.",
   "images": [
    {
@@ -252,16 +277,21 @@ window.PROJECTS = [
  {
   "slug": "uecl",
   "name": "UECL Trophy",
-  "category": "Design / Prototyping",
-  "role": "Contributed",
-  "studio": "",
+  "affiliation": "",
+  "workTypes": [
+   "Design",
+   "Prototyping",
+   "Parametric Design"
+  ],
+  "caseUrl": "",
   "writeup": "Designed to symbolise optimism, potential and opportunity for greatness, the trophy's core elements are the 32 curved hexagonal tubes, one for each team in the tournament, inspired by the flight of a football towards the goal — a highlight moment of greatness in the sport.\n\nLooking its best while held aloft by the winners, the trophy stands for the new tournament, built to open up European cups to more teams, and for those who shine, a potential career booster allowing them to rise above.\n\nSupporting the lead designer on the project, I took charge of tracing and profiling famous football kicks to extract the ball-flight curvature, and was later responsible for creating the first full-scale models of the trophy for client approval, and supporting production and delivery of the final trophy.",
   "images": [
    {
     "full": "images/full/uecl/uecl-01.png",
     "thumb": "images/thumb/uecl/uecl-01.png",
     "w": 1600,
-    "h": 900
+    "h": 900,
+    "caption": "Parametric ball-flight curves developed in Grasshopper"
    },
    {
     "full": "images/full/uecl/uecl-02.png",
@@ -298,9 +328,12 @@ window.PROJECTS = [
  {
   "slug": "juicy",
   "name": "Juicy",
-  "category": "Exhibition / Digital Art",
-  "role": "Collaboration",
-  "studio": "",
+  "affiliation": "Personal",
+  "workTypes": [
+   "Exhibition",
+   "Digital Art"
+  ],
+  "caseUrl": "",
   "writeup": "A collaboration with photographer Zoe Tigner-Haus, Juicy is a mixed-media body of work which offers a visual interpretation of the complex relationship between human society and food, with a particular focus on questions of production, consumption, history, tradition and ritual.\n\nThe project started as a full digital exhibition concept, and later developed into a real exhibition presented at a small gallery in north London during February 2022.",
   "images": [
    {
@@ -344,9 +377,12 @@ window.PROJECTS = [
  {
   "slug": "untitled",
   "name": "Untitled",
-  "category": "Exploration",
-  "role": "Solo",
-  "studio": "",
+  "affiliation": "Personal",
+  "workTypes": [
+   "Computational Design",
+   "Exploration"
+  ],
+  "caseUrl": "",
   "writeup": "Ongoing self-initiated series of works exploring oceanic scenes and objects, utilising computational design and other mediums.",
   "images": [
    {
@@ -365,7 +401,8 @@ window.PROJECTS = [
     "full": "images/full/untitled/untitled-03.png",
     "thumb": "images/thumb/untitled/untitled-03.png",
     "w": 1600,
-    "h": 900
+    "h": 900,
+    "caption": "Computational form study — oceanic series"
    },
    {
     "full": "images/full/untitled/untitled-04.png",
@@ -390,9 +427,9 @@ window.PROJECTS = [
  {
   "slug": "carbon-cell",
   "name": "Carbon Cell",
-  "category": "",
-  "role": "",
-  "studio": "",
+  "affiliation": "Morrama",
+  "workTypes": [],
+  "caseUrl": "",
   "writeup": "",
   "images": [
    {
@@ -424,9 +461,9 @@ window.PROJECTS = [
  {
   "slug": "dba",
   "name": "DBA",
-  "category": "",
-  "role": "",
-  "studio": "",
+  "affiliation": "Morrama",
+  "workTypes": [],
+  "caseUrl": "",
   "writeup": "",
   "images": [
    {
@@ -476,9 +513,9 @@ window.PROJECTS = [
  {
   "slug": "marina-abramovic",
   "name": "Marina Abramović",
-  "category": "",
-  "role": "",
-  "studio": "",
+  "affiliation": "Freelance",
+  "workTypes": [],
+  "caseUrl": "",
   "writeup": "",
   "images": [
    {

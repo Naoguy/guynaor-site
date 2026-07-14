@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
       img.alt = t.p.name;
       if (t.im.w && t.im.h) img.style.aspectRatio = t.im.w + ' / ' + t.im.h;
       a.appendChild(img);
-      a.addEventListener('mouseenter', () => focusProject(t.p.slug));
+      a.addEventListener('mouseenter', () => focusProject(t.p.slug, t.im.caption));
       a.addEventListener('mouseleave', clearFocus);
       frag.appendChild(a);
     });
@@ -58,18 +58,24 @@ window.addEventListener('scroll', () => {
     field.appendChild(frag);
   }
 
-  function focusProject(slug) {
+  const STUDIOS = ['Pentagram', 'Morrama'];
+  function affilShort(p) {
+    if (!p.affiliation) return '';
+    if (STUDIOS.includes(p.affiliation)) return 'at ' + p.affiliation;
+    return p.affiliation; // Freelance / Personal
+  }
+  function focusProject(slug, caption) {
     field.classList.add('has-focus');
     field.querySelectorAll('.tile').forEach(el =>
       el.classList.toggle('sibling', el.dataset.slug === slug));
     const p = bySlug[slug];
     if (hoverlabel) {
-      const bits = [p.name];
-      if (p.category) bits.push(p.category);
-      let credit = p.role || '';
-      if (p.studio) credit += (credit ? ' · ' : '') + p.studio;
-      if (credit) bits.push(credit);
-      hoverlabel.textContent = bits.join('   —   ');
+      if (caption) {
+        hoverlabel.textContent = caption;
+      } else {
+        const a = affilShort(p);
+        hoverlabel.textContent = p.name + (a ? '   —   ' + a : '');
+      }
       hoverlabel.classList.add('on');
     }
   }
@@ -85,9 +91,17 @@ window.addEventListener('scroll', () => {
     const idx = order.indexOf(p.slug);
     const prev = order[(idx - 1 + order.length) % order.length];
     const next = order[(idx + 1) % order.length];
-    let credit = p.role || '';
-    if (p.studio) credit += (credit ? ' · ' : '') + p.studio;
-    const roleClass = /solo/i.test(p.role) ? ' solo' : '';
+    let attrib = '';
+    if (p.affiliation) {
+      if (STUDIOS.includes(p.affiliation)) attrib = 'A project at ' + p.affiliation;
+      else if (/freelance/i.test(p.affiliation)) attrib = 'Freelance project';
+      else if (/personal/i.test(p.affiliation)) attrib = 'Personal work';
+      else attrib = p.affiliation;
+    }
+    const chips = (p.workTypes || []).map(t => '<span class="type">' + esc(t) + '</span>').join('');
+    const caseLink = p.caseUrl
+      ? '<div class="viewer-case"><a href="' + esc(p.caseUrl) + '" target="_blank" rel="noopener">Case study ↗</a></div>'
+      : '';
 
     let body;
     if (p.writeup && p.writeup.trim()) {
@@ -95,18 +109,20 @@ window.addEventListener('scroll', () => {
     } else {
       body = '<p class="pending">Write-up coming soon.</p>';
     }
-    const imgs = p.images.map(im =>
-      '<img loading="lazy" src="' + im.full + '" alt="' + esc(p.name) + '"'
-      + (im.w && im.h ? ' style="aspect-ratio:' + im.w + ' / ' + im.h + '"' : '') + '>'
-    ).join('');
+    const imgs = p.images.map(im => {
+      const tag = '<img loading="lazy" src="' + im.full + '" alt="' + esc(p.name) + '"'
+        + (im.w && im.h ? ' style="aspect-ratio:' + im.w + ' / ' + im.h + '"' : '') + '>';
+      return im.caption ? '<figure>' + tag + '<figcaption>' + esc(im.caption) + '</figcaption></figure>' : tag;
+    }).join('');
 
     return ''
       + '<a class="viewer-close" href="#">✕ &nbsp;Close</a>'
       + '<div class="viewer-inner">'
       +   '<div class="viewer-head">'
       +     '<h1>' + esc(p.name) + '</h1>'
-      +     (p.category ? '<p class="cat">' + esc(p.category) + '</p>' : '')
-      +     (credit ? '<span class="viewer-tag' + roleClass + '">' + esc(credit) + '</span>' : '')
+      +     (attrib ? '<p class="viewer-attrib">' + esc(attrib) + '</p>' : '')
+      +     (chips ? '<div class="viewer-types">' + chips + '</div>' : '')
+      +     caseLink
       +   '</div>'
       +   '<div class="viewer-writeup">' + body + '</div>'
       +   '<div class="viewer-imgs">' + imgs + '</div>'
