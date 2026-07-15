@@ -54,7 +54,7 @@ window.addEventListener('scroll', () => {
       a.appendChild(img);
       a.addEventListener('mouseenter', () => {
         clearTimeout(hoverTimer);
-        hoverTimer = setTimeout(() => focusProject(t.p.slug, t.im.caption), 90);
+        hoverTimer = setTimeout(() => focusProject(t.p.slug, t.im.caption), 1000);
       });
       a.addEventListener('mouseleave', () => { clearTimeout(hoverTimer); clearFocus(); });
       frag.appendChild(a);
