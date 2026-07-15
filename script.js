@@ -33,6 +33,7 @@ window.addEventListener('scroll', () => {
 
   const hoverlabel = document.getElementById('hoverlabel');
   const prng = seed => () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  let hoverTimer = null; // hover-intent: don't fire focus while scrolling past
 
   function render(seed) {
     const r = prng(seed);
@@ -49,9 +50,13 @@ window.addEventListener('scroll', () => {
       img.src = t.im.thumb;
       img.alt = t.p.name;
       if (t.im.w && t.im.h) img.style.aspectRatio = t.im.w + ' / ' + t.im.h;
+      if (t.im.alpha) { a.classList.add('alpha'); img.classList.add('alpha'); }
       a.appendChild(img);
-      a.addEventListener('mouseenter', () => focusProject(t.p.slug, t.im.caption));
-      a.addEventListener('mouseleave', clearFocus);
+      a.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(() => focusProject(t.p.slug, t.im.caption), 90);
+      });
+      a.addEventListener('mouseleave', () => { clearTimeout(hoverTimer); clearFocus(); });
       frag.appendChild(a);
     });
     field.innerHTML = '';
@@ -111,6 +116,7 @@ window.addEventListener('scroll', () => {
     }
     const imgs = p.images.map(im => {
       const tag = '<img loading="lazy" src="' + im.full + '" alt="' + esc(p.name) + '"'
+        + (im.alpha ? ' class="alpha"' : '')
         + (im.w && im.h ? ' style="aspect-ratio:' + im.w + ' / ' + im.h + '"' : '') + '>';
       return im.caption ? '<figure>' + tag + '<figcaption>' + esc(im.caption) + '</figcaption></figure>' : tag;
     }).join('');

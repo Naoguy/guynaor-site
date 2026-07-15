@@ -49,7 +49,8 @@ window.PROJECTS = [
     "full": "images/full/quandela/quandela-01.png",
     "thumb": "images/thumb/quandela/quandela-01.png",
     "w": 1061,
-    "h": 1500
+    "h": 1500,
+    "alpha": true
    },
    {
     "full": "images/full/quandela/quandela-02.jpg",
@@ -106,7 +107,8 @@ window.PROJECTS = [
     "thumb": "images/thumb/lightmatter/lightmatter-01.png",
     "w": 1600,
     "h": 303,
-    "caption": "Photonic waveguide motif driving the design language"
+    "caption": "Photonic waveguide motif driving the design language",
+    "alpha": true
    },
    {
     "full": "images/full/lightmatter/lightmatter-02.jpg",
@@ -299,13 +301,15 @@ window.PROJECTS = [
     "thumb": "images/thumb/uecl/uecl-01.png",
     "w": 1600,
     "h": 900,
-    "caption": "Parametric ball-flight curves developed in Grasshopper"
+    "caption": "Parametric ball-flight curves developed in Grasshopper",
+    "alpha": true
    },
    {
     "full": "images/full/uecl/uecl-02.png",
     "thumb": "images/thumb/uecl/uecl-02.png",
     "w": 1383,
-    "h": 656
+    "h": 656,
+    "alpha": true
    },
    {
     "full": "images/full/uecl/uecl-03.jpg",
@@ -323,7 +327,8 @@ window.PROJECTS = [
     "full": "images/full/uecl/uecl-05.png",
     "thumb": "images/thumb/uecl/uecl-05.png",
     "w": 1600,
-    "h": 900
+    "h": 900,
+    "alpha": true
    },
    {
     "full": "images/full/uecl/uecl-06.jpg",
@@ -399,26 +404,30 @@ window.PROJECTS = [
     "full": "images/full/untitled/untitled-01.png",
     "thumb": "images/thumb/untitled/untitled-01.png",
     "w": 100,
-    "h": 56
+    "h": 56,
+    "alpha": true
    },
    {
     "full": "images/full/untitled/untitled-02.png",
     "thumb": "images/thumb/untitled/untitled-02.png",
     "w": 1600,
-    "h": 900
+    "h": 900,
+    "alpha": true
    },
    {
     "full": "images/full/untitled/untitled-03.png",
     "thumb": "images/thumb/untitled/untitled-03.png",
     "w": 1600,
     "h": 900,
-    "caption": "Computational form study — oceanic series"
+    "caption": "Computational form study — oceanic series",
+    "alpha": true
    },
    {
     "full": "images/full/untitled/untitled-04.png",
     "thumb": "images/thumb/untitled/untitled-04.png",
     "w": 1600,
-    "h": 900
+    "h": 900,
+    "alpha": true
    },
    {
     "full": "images/full/untitled/untitled-05.jpg",

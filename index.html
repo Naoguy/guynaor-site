@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -42,9 +42,6 @@
     <!-- Scatter field — populated from data.js by script.js -->
     <div class="field" id="field"></div>
 
-    <!-- Hover context label (desktop) -->
-    <div id="hoverlabel" aria-hidden="true"></div>
-
     <section class="contact-section">
       <h2>Contact</h2>
       <div class="contact-links">
@@ -65,10 +62,13 @@
     <footer class="site-footer"><span>↘</span><span>2025</span><span>↗</span></footer>
   </div>
 
+  <!-- Hover context label (desktop) — outside .page so it stays fixed to the screen -->
+  <div id="hoverlabel" aria-hidden="true"></div>
+
   <!-- PROJECT VIEWER (overlay; opened via #slug in the URL) -->
   <div id="viewer" aria-hidden="true"></div>
 
-  <script src="data.js?v=2"></script>
-  <script src="script.js?v=2"></script>
+  <script src="data.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
