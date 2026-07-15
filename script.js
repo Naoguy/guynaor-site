@@ -45,13 +45,23 @@ window.addEventListener('scroll', () => {
       a.href = '#' + t.p.slug;
       a.dataset.slug = t.p.slug;
       a.style.setProperty('--rot', (r() * 2.4 - 1.2).toFixed(2) + 'deg');
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.src = t.im.thumb;
-      img.alt = t.p.name;
-      if (t.im.w && t.im.h) img.style.aspectRatio = t.im.w + ' / ' + t.im.h;
-      if (t.im.alpha) { a.classList.add('alpha'); img.classList.add('alpha'); }
-      a.appendChild(img);
+      let media;
+      if (t.im.type === 'video') {
+        media = document.createElement('video');
+        media.src = t.im.thumb;
+        media.poster = t.im.thumbPoster;
+        media.muted = true; media.loop = true; media.autoplay = true;
+        media.playsInline = true; media.preload = 'metadata';
+        media.setAttribute('muted', ''); media.setAttribute('playsinline', '');
+      } else {
+        media = document.createElement('img');
+        media.loading = 'lazy';
+        media.src = t.im.thumb;
+        media.alt = t.p.name;
+        if (t.im.alpha) { a.classList.add('alpha'); media.classList.add('alpha'); }
+      }
+      if (t.im.w && t.im.h) media.style.aspectRatio = t.im.w + ' / ' + t.im.h;
+      a.appendChild(media);
       a.addEventListener('mouseenter', () => {
         clearTimeout(hoverTimer);
         hoverTimer = setTimeout(() => focusProject(t.p.slug, t.im.caption), 1000);
@@ -61,6 +71,15 @@ window.addEventListener('scroll', () => {
     });
     field.innerHTML = '';
     field.appendChild(frag);
+
+    // play scatter videos only while they're on screen (saves CPU/battery)
+    const vids = field.querySelectorAll('video');
+    if (vids.length && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause();
+      }), { rootMargin: '150px' });
+      vids.forEach(v => io.observe(v));
+    }
   }
 
   const STUDIOS = ['Pentagram', 'Morrama'];
@@ -115,9 +134,14 @@ window.addEventListener('scroll', () => {
       body = '<p class="pending">Write-up coming soon.</p>';
     }
     const imgs = p.images.map(im => {
-      const tag = '<img loading="lazy" src="' + im.full + '" alt="' + esc(p.name) + '"'
-        + (im.alpha ? ' class="alpha"' : '')
-        + (im.w && im.h ? ' style="aspect-ratio:' + im.w + ' / ' + im.h + '"' : '') + '>';
+      const ar = (im.w && im.h) ? ' style="aspect-ratio:' + im.w + ' / ' + im.h + '"' : '';
+      let tag;
+      if (im.type === 'video') {
+        tag = '<video src="' + im.full + '" poster="' + im.poster + '" muted loop autoplay playsinline controls preload="metadata"' + ar + '></video>';
+      } else {
+        tag = '<img loading="lazy" src="' + im.full + '" alt="' + esc(p.name) + '"'
+          + (im.alpha ? ' class="alpha"' : '') + ar + '>';
+      }
       return im.caption ? '<figure>' + tag + '<figcaption>' + esc(im.caption) + '</figcaption></figure>' : tag;
     }).join('');
 
